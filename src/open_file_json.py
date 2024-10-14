@@ -1,7 +1,7 @@
 import json
 
-from src.class_category import Category
-from src.class_product import Product
+from src.category import Category
+from src.product import Product
 
 
 def open_file_json(path: str) -> list[dict]:
