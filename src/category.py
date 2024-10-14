@@ -1,16 +1,19 @@
 from src.product import Product
-from tests.conftest import *
+
+
 class Category:
-    """Этот класс 'Категории' принимает на вход значения ниже. Ведет подсчет количества категорий и уникальных продуктов"""
+    """Этот класс 'Категории' принимает на вход значения ниже.
+    Ведет подсчет количества категорий и уникальных продуктов"""
 
     name: str
     description: str
-    __products: list #изменен статус на private
+    __products: list  # изменен статус на private
     category_count = 0
     product_count = 0
 
     def __init__(self, name: str, description: str, __products: list):
-        """Передает значения в одноименные переменные, последние две строчки ведут счет количества категорий и уникальных продуктов"""
+        """Передает значения в одноименные переменные,
+        последние две строчки ведут счет количества категорий и уникальных продуктов"""
         self.name = name
         self.description = description
         self.__products = __products
@@ -29,9 +32,5 @@ class Category:
     def product_list(self):
         product_str = ""
         for product in self.products:
-            product_str += (
-                f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
-            )
+            product_str += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return product_str
-
-
