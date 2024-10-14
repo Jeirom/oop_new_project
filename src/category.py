@@ -1,4 +1,5 @@
 from src.product import Product
+from tests.conftest import *
 class Category:
     """Этот класс 'Категории' принимает на вход значения ниже. Ведет подсчет количества категорий и уникальных продуктов"""
 
@@ -32,4 +33,5 @@ class Category:
                 f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
             )
         return product_str
+
 

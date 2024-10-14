@@ -36,4 +36,10 @@ def second_category():
                             ]))
 
 
+@pytest.fixture
+def int_value_big():
+    return 10000
 
+@pytest.fixture
+def int_value_small():
+    return 0
