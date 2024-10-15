@@ -32,6 +32,11 @@ class Product:
         quantity = product_data.get("quantity")
         return cls(name, description, price, quantity)
 
+    def __str__(self):
+        return (f'Название продукта: {self.name}, '
+                f'Цена: {self.price} руб. '
+                f'Остаток: {self.quantity} шт.')
+
     def __repr__(self):
         return (f"Product(name='{self.name}', description='{self.description}',"
                 f" price={self.price}, quantity={self.quantity})")
