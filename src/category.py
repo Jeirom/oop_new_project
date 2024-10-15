@@ -11,14 +11,14 @@ class Category:
     category_count = 0
     product_count = 0
 
-    def __init__(self, name: str, description: str, __products: list):
+    def __init__(self, name: str, description: str, products: list):
         """Передает значения в одноименные переменные,
         последние две строчки ведут счет количества категорий и уникальных продуктов"""
         self.name = name
         self.description = description
-        self.__products = __products
+        self.__products = products
         Category.category_count += 1
-        Category.product_count += len(__products)
+        Category.product_count += len(products)
 
     @property
     def products(self):

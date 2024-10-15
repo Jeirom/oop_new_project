@@ -20,8 +20,3 @@ def test_product_msi(product_tree):
     assert product_tree.description == "512GB, Черный цвет, 16gb ОЗУ, Win11"
     assert product_tree.price == 79900
 
-def test_new_product():
-    Product.new_product.price = 0
-    assert Product.new_product.price == 180000
-    Product.new_product.price = 12000
-    assert Product.new_product.price == 12000

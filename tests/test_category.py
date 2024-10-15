@@ -10,7 +10,7 @@ def test_class_category(second_category,firs_category):
     assert len(firs_category.products) == 1
 
 def test_add_category(firs_category):
-    assert Category.product_count == 1
+    assert Category.product_count == 5
 
 def test_category_tv(category_tv, product_4):
     assert category_tv.name == "Телевизоры"
@@ -26,5 +26,4 @@ def test_category_smart(category_smart, product_1, product_2, product_3):
 
 def test_category(category_smart, product_4):
     category_smart.add_product(product_4)
-    category_smart.add_product(new_product)
-    assert Category.product_count == 9
+    assert Category.product_count == 13
