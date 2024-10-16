@@ -27,3 +27,6 @@ def test_category_smart(category_smart, product_1, product_2, product_3):
 def test_category(category_smart, product_4):
     category_smart.add_product(product_4)
     assert Category.product_count == 13
+
+def test_category_str(category_smart):
+    assert str(category_smart) ==  'Смартфоны, количество продуктов: 27 шт.'

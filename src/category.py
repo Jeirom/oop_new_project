@@ -5,11 +5,11 @@ class Category:
     """Этот класс 'Категории' принимает на вход значения ниже.
     Ведет подсчет количества категорий и уникальных продуктов"""
 
-    name: str
-    description: str
+    name: str  # просто name
+    description: str  # описание категории
     __products: list  # изменен статус на private
-    category_count = 0
-    product_count = 0
+    category_count = 0  # кол-во категорий
+    product_count = 0  # кол-во продуктов
 
     def __init__(self, name: str, description: str, products: list):
         """Передает значения в одноименные переменные,
@@ -22,11 +22,17 @@ class Category:
 
     @property
     def products(self):
+        """Меняет значение атрибута на приватный"""
         return self.__products
 
     def add_product(self, new_product: Product):
+        """Добавляет продукт в категорию"""
         self.__products.append(new_product)
         Category.product_count += 1
 
     def __str__(self):
-        return f'{self.name}, количество продуктов: {self.product_count} шт.'
+        """Маг-метод для выдачи юзеру информацию"""
+        all_quantity = 0
+        for j in self.__products:
+            all_quantity += j.quantity
+        return f"{self.name}, количество продуктов: {all_quantity} шт."
