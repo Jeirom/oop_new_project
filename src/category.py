@@ -21,16 +21,16 @@ class Category:
         Category.product_count += len(products)
 
     @property
-    def products(self):
+    def products(self) -> list:
         """Меняет значение атрибута на приватный"""
         return self.__products
 
-    def add_product(self, new_product: Product):
+    def add_product(self, new_product: Product) -> None:
         """Добавляет продукт в категорию"""
         self.__products.append(new_product)
         Category.product_count += 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Маг-метод для выдачи юзеру информацию"""
         all_quantity = 0
         for j in self.__products:
