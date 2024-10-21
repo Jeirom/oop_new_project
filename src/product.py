@@ -53,3 +53,18 @@ class Product:
         if isinstance(other, self.__class__):
             return (self.price * self.quantity) + (other.price * other.quantity)
         raise TypeError
+
+class Smartphone(Product):
+    def __init__(self,name: str, description: str, price: float, quantity: int,efficiency,model,memory, color):
+        super().__init__(efficiency, model,memory,color)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
+
+class LawnGrass(Product):
+    def __init_(self,,name: str, description: str, price: float, quantity: int, country, germination_period, color):
+        super().__init__(country,germination_period,color)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
