@@ -56,15 +56,26 @@ class Product:
 
 class Smartphone(Product):
     def __init__(self,name: str, description: str, price: float, quantity: int,efficiency,model,memory, color):
-        super().__init__(efficiency, model,memory,color)
+        super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
         self.color = color
 
 class LawnGrass(Product):
-    def __init_(self,,name: str, description: str, price: float, quantity: int, country, germination_period, color):
-        super().__init__(country,germination_period,color)
+    name : str
+
+    def __init_(self,name: str, description: str, price: float, quantity: int, country, germination_period, color):
+        super().__init__(name, description, price,quantity)
+
         self.country = country
         self.germination_period = germination_period
         self.color = color
+
+
+
+test1 = Product('name', 'opis', 10000, 5)
+
+print(test1.name)
+print(test1.quantity)
+test2 = LawnGrass('name','ope', 11111, 1,  )
