@@ -27,8 +27,10 @@ class Category:
 
     def add_product(self, new_product: Product) -> None:
         """Добавляет продукт в категорию"""
-        self.__products.append(new_product)
-        Category.product_count += 1
+        if isinstance(new_product, Product):
+            self.__products.append(new_product)
+            Category.product_count += 1
+        raise TypeError('Категории не совпадают')
 
     def __str__(self) -> str:
         """Маг-метод для выдачи юзеру информацию"""

@@ -1,3 +1,4 @@
+from itertools import product
 from typing import Any
 
 class Product:
@@ -50,11 +51,22 @@ class Product:
 
     def __add__(self, other: Any) -> float:
         """Маг-метод для подсчета всей суммы товаров на складе из цены * количество"""
-        if isinstance(other, self.__class__):
+        if type(other) == self.__class__:
             return (self.price * self.quantity) + (other.price * other.quantity)
         raise TypeError
 
+
 class Smartphone(Product):
+
+    name: str
+    description: str
+    price: float
+    quantity: int
+    efficiency: str
+    model: str
+    memory: str
+    color: str
+
     def __init__(self,name: str, description: str, price: float, quantity: int,efficiency,model,memory, color):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -62,20 +74,32 @@ class Smartphone(Product):
         self.memory = memory
         self.color = color
 
+
 class LawnGrass(Product):
-    name : str
 
-    def __init_(self,name: str, description: str, price: float, quantity: int, country, germination_period, color):
+    name: str
+    description: str
+    price: float
+    quantity: int
+    country: str
+    germination_period: str
+    color: str
+
+    def __init__(self,name: str, description: str, price: float, quantity: int, country, germination_period, color):
         super().__init__(name, description, price,quantity)
-
         self.country = country
         self.germination_period = germination_period
         self.color = color
 
 
 
-test1 = Product('name', 'opis', 10000, 5)
 
-print(test1.name)
-print(test1.quantity)
-test2 = LawnGrass('name','ope', 11111, 1,  )
+
+
+#
+# test1 = Product('name', 'opis', 10000, 5)
+#
+# print(test1.name)
+# print(test1.quantity)
+# test2 = Smartphone('name','ope', 11111, 1, '1', '1', 1, 1)
+# print(test2.memory)
