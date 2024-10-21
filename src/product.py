@@ -53,7 +53,8 @@ class Product:
         """Маг-метод для подсчета всей суммы товаров на складе из цены * количество"""
         if type(other) == self.__class__:
             return (self.price * self.quantity) + (other.price * other.quantity)
-        raise TypeError
+        else:
+            raise TypeError
 
 
 class Smartphone(Product):
