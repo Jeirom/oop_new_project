@@ -1,5 +1,6 @@
+from file_test_lessons import TestClass
 from src.category import Category
-from src.product import Product
+from src.product import Product, Smartphone
 import pytest
 
 
@@ -93,3 +94,10 @@ def product_3():
 def product_4():
     return Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
 
+@pytest.fixture
+def product_prone():
+    return Smartphone('Iphone', 'Б\У', 25000, 1, '-', 'XR', '128gb', 'pink')
+
+@pytest.fixture
+def test_file_test_class():
+    return TestClass('Test')

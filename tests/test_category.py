@@ -1,6 +1,6 @@
 from src.category import Category
-
-
+from tests.conftest import product_4, product_iphone, product_two
+import pytest
 
 def test_class_category(second_category,firs_category):
     assert second_category.name == "Техника"
@@ -30,3 +30,7 @@ def test_category(category_smart, product_4):
 
 def test_category_str(category_smart):
     assert str(category_smart) ==  'Смартфоны, количество продуктов: 27 шт.'
+
+def test_add_error(firs_category):
+    with pytest.raises(TypeError):
+        firs_category.add_product(1)

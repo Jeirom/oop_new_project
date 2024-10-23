@@ -30,4 +30,8 @@ def test_product_add(product_3, product_4):
     assert result == expected_result
 
 def test_product_repr(product_two):
-    assert product_two == Product(name='Nokia228', description='5TB, Серый цвет, 999MP камера', price=1800000.0, quantity=1)
+    assert repr(product_two) == ("Product(name='Nokia228', description='5TB,"
+                                 " Серый цвет, 999MP камера', price=1800000.0, quantity=1)")
+
+def test_add_prone_product(product_prone):
+    assert product_prone.name == 'Iphone'
