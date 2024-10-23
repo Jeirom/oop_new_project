@@ -31,7 +31,7 @@ class Category:
             self.__products.append(new_product)
             Category.product_count += 1
         else:
-            raise TypeError('Категории не совпадают')
+            raise TypeError("Категории не совпадают")
 
     def __str__(self) -> str:
         """Маг-метод для выдачи юзеру информацию"""
