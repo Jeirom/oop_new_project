@@ -59,17 +59,27 @@ class Product:
 
 class Smartphone(Product):
     """Дочерний класс продукта. Смартфоны"""
+
     name: str
     description: str
     price: float
     quantity: int
     efficiency: float
     model: str
-    memory: str
+    memory: int
     color: str
 
-    def __init__(self, name: str, description: str, price: float, quantity: int,
-                 efficiency: float, model: str, memory: str, color: str):
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        efficiency: float,
+        model: str,
+        memory: int,
+        color: str,
+    ):
         """Инициализация новых атрибутов + атрибуты из родительского класса"""
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -80,6 +90,7 @@ class Smartphone(Product):
 
 class LawnGrass(Product):
     """Дочерний класс продукта. Газонная трава"""
+
     name: str
     description: str
     price: float
@@ -88,8 +99,16 @@ class LawnGrass(Product):
     germination_period: str
     color: str
 
-    def __init__(self, name: str, description: str, price: float, quantity: int,
-                 country: str, germination_period: str, color: str):
+    def __init__(
+        self,
+        name: str,
+        description: str,
+        price: float,
+        quantity: int,
+        country: str,
+        germination_period: str,
+        color: str,
+    ):
         """Инициализация новых атрибутов + атрибуты из родительского класса"""
         super().__init__(name, description, price, quantity)
         self.country = country
